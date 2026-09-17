@@ -13,3 +13,4 @@
 
 ## 다음 단계
 실운영 버전은 Supabase Auth/Storage/Database를 연결하고 data.js를 API 계층으로 교체합니다. 관리자 인증과 파일 CRUD는 공개 UI와 분리합니다.
+Updated for Vercel deployment.

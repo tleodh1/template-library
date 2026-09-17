@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FORME — Template Library</title>
+<title>WorkFlow — Template Library</title>
 <style>
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 :root{--blue:#3182f6;--blue2:#1b64da;--text:#191f28;--muted:#8b95a1;--line:#e5e8eb;--bg:#f7f8fa;--white:#fff}
@@ -13,7 +13,7 @@
 </style>
 </head>
 <body>
-<header class="top"><div class="nav"><div class="brand">FORME</div><nav class="menus"><a>PPT</a><a>WORD</a><a>EXCEL</a><a>기타양식</a><a>★ 즐겨찾기</a></nav><button class="search-mini">⌕</button></div></header>
+<header class="top"><div class="nav"><div class="brand">WorkFlow</div><nav class="menus"><a>PPT</a><a>WORD</a><a>EXCEL</a><a>기타양식</a><a>★ 즐겨찾기</a></nav><button class="search-mini">⌕</button></div></header>
 <div class="mega"><div class="mega-in"><div><h4>PPT</h4><p>회사소개서</p><p>IR · 제안서</p><p>보고자료</p><p>사업계획서</p><p>교육자료</p></div><div><h4>WORD</h4><p>보고서</p><p>회의록</p><p>기획서</p><p>공문 · 안내문</p><p>체크리스트</p></div><div><h4>EXCEL</h4><p>DB 관리</p><p>일정 관리</p><p>계산 양식</p><p>교육 관리</p><p>예산 관리</p></div><div><h4>기타양식</h4><p>PDF</p><p>이미지</p><p>아이콘</p><p>참고자료</p><p>기타</p></div></div></div>
 <main>
 <section class="hero"><div class="hero-copy"><div class="eyebrow">MY WORK LIBRARY</div><h1>필요한 양식을<br>가장 빠르게 찾는 방법</h1><div class="sub">PPT, Word, Excel과 자주 쓰는 업무 양식을 한 곳에서 관리하세요.</div><div class="big-search"><span>⌕</span><input id="search" placeholder="문서명, 양식 또는 키워드를 검색하세요"></div></div><div class="visual"><div class="visual-copy"><b>FEATURED COLLECTION</b><h2>좋은 문서는<br>좋은 시작에서 만들어집니다.</h2><p>직접 만든 템플릿과 업무 양식을 모아두고<br>필요할 때 바로 꺼내 사용할 수 있습니다.</p></div><div class="dots"><i class="dot on"></i><i class="dot"></i><i class="dot"></i></div></div></section>
@@ -24,7 +24,7 @@
 <div class="card" data-name="교육관리 DB Excel 엑셀"><div class="thumb"><div class="doc">X</div></div><div class="card-body"><span class="type">EXCEL</span><div class="title">교육관리 DB</div><div class="desc">신청 및 결과보고 관리용 양식</div><div class="meta">XLSX · v2.1 <span class="heart">♡</span></div></div></div>
 </div></section>
 <div class="category"><section class="section"><div class="sec-head"><div><h2>양식 둘러보기</h2><p>파일 형식별로 필요한 자료를 빠르게 찾을 수 있습니다.</p></div></div><div class="cat-grid"><div class="cat"><div class="cat-icon">P</div><b>PPT Templates</b><p>보고서, 제안서, 회사소개서 등 프레젠테이션 템플릿</p></div><div class="cat"><div class="cat-icon">W</div><b>Word Forms</b><p>회의록, 기획서, 공문 등 기본 문서 양식</p></div><div class="cat"><div class="cat-icon">X</div><b>Excel Sheets</b><p>DB, 일정, 계산 및 관리용 스프레드시트</p></div><div class="cat"><div class="cat-icon">+</div><b>Other Resources</b><p>PDF, 이미지, 아이콘과 각종 참고자료</p></div></div></section></div>
-</main><footer class="footer"><b style="color:#333d4b">FORME</b><br><br>Personal template library · Designed for simple work.</footer>
+</main><footer class="footer"><b style="color:#333d4b">WorkFlow</b><br><br>Personal template library · Designed for simple work.</footer>
 <script>
 document.querySelectorAll('.heart').forEach(h=>h.onclick=e=>{e.stopPropagation();h.textContent=h.textContent==='♡'?'♥':'♡'});
 const input=document.getElementById('search');input.addEventListener('input',()=>{let q=input.value.toLowerCase();document.querySelectorAll('#cards .card').forEach(c=>c.style.display=c.dataset.name.toLowerCase().includes(q)?'block':'none')});

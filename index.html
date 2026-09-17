@@ -1,1 +1,694 @@
-<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>WorkFlow — Template Library</title><style>@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');:root{--blue:#3182f6;--text:#191f28;--muted:#8b95a1;--line:#e5e8eb;--bg:#f7f8fa}*{box-sizing:border-box}body{margin:0;font-family:Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--text);background:#fff;letter-spacing:-.02em}.top{height:72px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.96);z-index:30}.nav{max-width:1180px;height:72px;margin:auto;display:flex;align-items:center}.brand{font-size:23px;font-weight:800;color:var(--blue);margin-right:auto}.menus{display:flex;align-items:center;gap:42px}.menus button,.search-mini{border:0;background:none;font:inherit;cursor:pointer;color:#333d4b;font-weight:600}.menus button:hover{color:var(--blue)}.search-mini{margin-left:32px;font-size:20px}.mega{position:fixed;left:0;right:0;top:72px;background:rgba(255,255,255,.98);border-bottom:1px solid var(--line);box-shadow:0 18px 35px rgba(0,0,0,.06);z-index:25;opacity:0;visibility:hidden;transform:translateY(-12px);transition:opacity .22s ease,transform .22s ease,visibility .22s}.top:hover+.mega,.mega:hover,.mega.open{opacity:1;visibility:visible;transform:translateY(0)}.mega-inner{max-width:980px;margin:auto;padding:24px 0 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:48px}.mega-col b{display:block;font-size:13px;color:#8b95a1;margin-bottom:12px}.mega-col button{display:block;border:0;background:none;padding:6px 0;font:inherit;font-size:14px;color:#4e5968;cursor:pointer}.mega-col button:hover{color:var(--blue)}.hero{max-width:1180px;margin:auto;padding:74px 0 28px}.hero-copy{text-align:center}.eyebrow{color:var(--blue);font-weight:700;font-size:14px}.hero h1{font-size:46px;letter-spacing:-2.4px;margin:14px 0;line-height:1.18}.sub{color:#6b7684;font-size:17px}.big-search{width:580px;max-width:90%;margin:28px auto 40px;background:var(--bg);border-radius:16px;padding:0 18px;display:flex;align-items:center;gap:10px}.big-search input{height:52px;border:0;outline:0;background:transparent;width:100%;font:inherit}.visual{height:325px;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(120deg,#e8f3ff,#f3f8ff 55%,#d9ebff);display:flex;align-items:center;padding:54px}.visual:after{content:"";position:absolute;width:390px;height:390px;border-radius:50%;right:-60px;top:-110px;background:rgba(49,130,246,.15)}.visual:before{content:"";position:absolute;width:260px;height:260px;border-radius:42px;right:180px;bottom:-140px;transform:rotate(20deg);background:#3182f6}.visual-copy{position:relative;z-index:2}.visual-copy b{font-size:14px;color:var(--blue)}.visual-copy h2{font-size:34px;line-height:1.25;margin:12px 0}.visual-copy p{color:#6b7684;line-height:1.7}.section{max-width:1180px;margin:auto;padding:62px 0}.sec-head{display:flex;align-items:end;margin-bottom:24px}.sec-head h2{font-size:26px;margin:0}.sec-head p{margin:6px 0 0;color:var(--muted);font-size:14px}.view{margin-left:auto;border:0;background:none;color:var(--blue);font-weight:700;cursor:pointer}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;cursor:pointer;transition:.18s}.card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}.thumb{height:170px;background:#f2f4f6;display:flex;align-items:center;justify-content:center;overflow:hidden}.thumb img{width:100%;height:100%;object-fit:contain;background:#fff}.placeholder{width:78%;height:72%;background:#fff;box-shadow:0 5px 20px rgba(0,0,0,.09);padding:15px}.placeholder i{display:block;height:6px;background:var(--blue);width:36%;border-radius:5px;margin-bottom:10px}.placeholder span{display:block;height:5px;background:#e5e8eb;border-radius:4px;margin:7px 0}.card-body{padding:17px}.type{font-size:11px;font-weight:700;color:var(--blue)}.title{font-size:16px;font-weight:700;margin:7px 0 6px}.desc{font-size:13px;color:var(--muted);height:20px;overflow:hidden}.meta{display:flex;margin-top:15px;color:#8b95a1;font-size:12px}.heart{margin-left:auto;font-size:18px;color:#b0b8c1}.empty{grid-column:1/-1;padding:45px;text-align:center;color:var(--muted);background:var(--bg);border-radius:18px}.category{background:var(--bg);padding:65px 0}.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.cat{background:#fff;border-radius:18px;padding:24px}.cat-icon{width:42px;height:42px;background:#e8f3ff;color:var(--blue);border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:18px}.cat p{font-size:13px;color:var(--muted);line-height:1.6}.footer{max-width:1180px;margin:auto;padding:40px 0 70px;color:#8b95a1;font-size:13px;border-top:1px solid var(--line)}@media(max-width:900px){.nav,.hero,.section{padding-left:20px;padding-right:20px}.menus{gap:14px}.cards,.cat-grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:36px}.visual{padding:35px}.mega-inner{padding:20px;grid-template-columns:repeat(2,1fr)}}</style></head><body><header class="top"><div class="nav"><div class="brand">WorkFlow</div><div class="menus"><button data-filter="PPT">PPT</button><button data-filter="WORD">WORD</button><button data-filter="EXCEL">EXCEL</button><button data-filter="OTHER">기타양식</button><button data-filter="FAV">★ 즐겨찾기</button></div><button class="search-mini" id="searchMini">⌕</button></div></header><div class="mega" id="mega"><div class="mega-inner"><div class="mega-col"><b>PPT</b><button data-filter="PPT" data-cat="회사소개서">회사소개서</button><button data-filter="PPT" data-cat="IR">IR · 제안서</button><button data-filter="PPT" data-cat="보고자료">보고자료</button><button data-filter="PPT" data-cat="사업계획서">사업계획서</button><button data-filter="PPT" data-cat="교육자료">교육자료</button></div><div class="mega-col"><b>WORD</b><button data-filter="WORD" data-cat="보고서">보고서</button><button data-filter="WORD" data-cat="회의록">회의록</button><button data-filter="WORD" data-cat="기획서">기획서</button><button data-filter="WORD" data-cat="공문">공문 · 안내문</button><button data-filter="WORD" data-cat="체크리스트">체크리스트</button></div><div class="mega-col"><b>EXCEL</b><button data-filter="EXCEL" data-cat="DB관리">DB 관리</button><button data-filter="EXCEL" data-cat="일정관리">일정 관리</button><button data-filter="EXCEL" data-cat="계산양식">계산 양식</button><button data-filter="EXCEL" data-cat="교육관리">교육 관리</button><button data-filter="EXCEL" data-cat="예산관리">예산 관리</button></div><div class="mega-col"><b>기타양식</b><button data-filter="OTHER" data-cat="PDF">PDF</button><button data-filter="OTHER" data-cat="이미지">이미지</button><button data-filter="OTHER" data-cat="아이콘">아이콘</button><button data-filter="OTHER" data-cat="참고자료">참고자료</button><button data-filter="OTHER" data-cat="기타">기타</button></div></div></div><main><section class="hero"><div class="hero-copy"><div class="eyebrow">MY WORK LIBRARY</div><h1>필요한 양식을<br>가장 빠르게 찾는 방법</h1><div class="sub">PPT, Word, Excel과 자주 쓰는 업무 양식을 한 곳에서 관리하세요.</div><div class="big-search"><span>⌕</span><input id="search" autocomplete="off" placeholder="문서명, 양식 또는 키워드를 검색하세요"></div></div><div class="visual"><div class="visual-copy"><b>FEATURED COLLECTION</b><h2>좋은 문서는<br>좋은 시작에서 만들어집니다.</h2><p>직접 만든 템플릿과 업무 양식을 모아두고<br>필요할 때 바로 꺼내 사용할 수 있습니다.</p></div></div></section><section class="section" id="recent"><div class="sec-head"><div><h2>최근 업데이트</h2><p id="resultText">최근 추가하거나 수정한 양식입니다.</p></div><button class="view" id="reset">전체보기 →</button></div><div class="cards" id="cards"><div class="empty">등록된 템플릿을 불러오는 중입니다.</div></div></section><div class="category"><section class="section"><div class="sec-head"><div><h2>양식 둘러보기</h2><p>파일 형식별로 필요한 자료를 빠르게 찾을 수 있습니다.</p></div></div><div class="cat-grid"><div class="cat"><div class="cat-icon">P</div><b>PPT Templates</b><p>보고서, 제안서, 회사소개서 등 프레젠테이션 템플릿</p></div><div class="cat"><div class="cat-icon">W</div><b>Word Forms</b><p>회의록, 기획서, 공문 등 기본 문서 양식</p></div><div class="cat"><div class="cat-icon">X</div><b>Excel Sheets</b><p>DB, 일정, 계산 및 관리용 스프레드시트</p></div><div class="cat"><div class="cat-icon">+</div><b>Other Resources</b><p>PDF, 이미지, 아이콘과 각종 참고자료</p></div></div></section></div></main><footer class="footer"><b style="color:#333d4b">WorkFlow</b><br><br>Personal template library · Designed for simple work.</footer><script src="/assets/js/thumb-data.js"></script><script>const URL='https://vvduewatugzqlktxbeli.supabase.co',BUCKET='templates',MANIFEST='manifest.json';const THUMBS=window.WORKFLOW_THUMBS||{};const cards=document.getElementById('cards'),search=document.getElementById('search'),resultText=document.getElementById('resultText');let all=[];let filter='',catFilter='';let searchTimer;function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}function fileUrl(path){return URL+'/storage/v1/object/public/'+BUCKET+'/'+String(path).split('/').map(encodeURIComponent).join('/')}function fallback(){return '<div class="placeholder"><i></i><span></span><span></span><span></span></div>'}function isFav(id){return localStorage.getItem('wf_fav_'+id)==='1'}function matches(x){const q=search.value.trim().toLowerCase();const hay=[x.title,x.description,x.category,x.file_type,x.file_name].join(' ').toLowerCase();if(q&&!hay.includes(q))return false;if(filter==='FAV'&&!isFav(x.id))return false;if(filter&&filter!=='FAV'&&x.file_type!==filter)return false;if(catFilter&&!String(x.category||'').toLowerCase().includes(catFilter.toLowerCase())&&!String(x.title||'').toLowerCase().includes(catFilter.toLowerCase()))return false;return true}function render(){const list=all.filter(matches);if(!list.length){cards.innerHTML='<div class="empty">검색 결과가 없습니다.</div>';resultText.textContent='조건에 맞는 양식을 찾지 못했습니다.';return}resultText.textContent=(search.value||filter||catFilter)?list.length+'개의 양식을 찾았습니다.':'최근 추가하거나 수정한 양식입니다.';cards.innerHTML=list.slice(0,12).map(x=>{const thumb=THUMBS[x.title]||(x.thumbnail_path?fileUrl(x.thumbnail_path):'');const ext=(x.file_name||'').split('.').pop().toUpperCase();return `<div class="card" data-url="${esc(fileUrl(x.file_path))}"><div class="thumb">${thumb?`<img src="${esc(thumb)}" alt="${esc(x.title)}" onerror="this.parentNode.innerHTML='${fallback().replace(/'/g,"&#39;")}'">`:fallback()}</div><div class="card-body"><span class="type">${esc(x.file_type||'OTHER')}</span><div class="title">${esc(x.title||x.file_name)}</div><div class="desc">${esc(x.description||'')}</div><div class="meta">${esc(ext||x.file_type)} · v${esc(x.version||'1.0')}<span class="heart" data-id="${esc(x.id)}">${isFav(x.id)?'♥':'♡'}</span></div></div></div>`}).join('');document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>location.href=c.dataset.url));document.querySelectorAll('.heart').forEach(h=>h.addEventListener('click',e=>{e.stopPropagation();const k='wf_fav_'+h.dataset.id;localStorage.setItem(k,isFav(h.dataset.id)?'0':'1');render()}))}async function load(){try{const r=await fetch(fileUrl(MANIFEST)+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw 0;const j=await r.json();all=Array.isArray(j)?j:[];render()}catch{cards.innerHTML='<div class="empty">템플릿 목록을 불러오지 못했습니다.</div>'}}search.addEventListener('input',()=>{filter='';catFilter='';render();clearTimeout(searchTimer);if(search.value.trim())searchTimer=setTimeout(()=>document.getElementById('recent').scrollIntoView({behavior:'smooth',block:'start'}),250)});search.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();filter='';catFilter='';render();document.getElementById('recent').scrollIntoView({behavior:'smooth',block:'start'})}});document.getElementById('searchMini').onclick=()=>{search.focus();search.select()};document.getElementById('reset').onclick=()=>{filter='';catFilter='';search.value='';render()};document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;catFilter=b.dataset.cat||'';search.value='';render();document.getElementById('recent').scrollIntoView({behavior:'smooth',block:'start'})});load();</script></body></html>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>WorkFlow — Template Library</title>
+    <style>
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+      :root {
+        --blue: #3182f6;
+        --text: #191f28;
+        --muted: #8b95a1;
+        --line: #e5e8eb;
+        --bg: #f7f8fa;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          Pretendard,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--text);
+        background: #fff;
+        letter-spacing: -0.02em;
+      }
+      .top {
+        height: 72px;
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        background: rgba(255, 255, 255, 0.96);
+        z-index: 30;
+      }
+      .nav {
+        max-width: 1180px;
+        height: 72px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+      .brand {
+        font-size: 23px;
+        font-weight: 800;
+        color: var(--blue);
+        margin-right: auto;
+      }
+      .menus {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+      }
+      .menus button,
+      .search-mini {
+        border: 0;
+        background: none;
+        font: inherit;
+        cursor: pointer;
+        color: #333d4b;
+        font-weight: 600;
+      }
+      .menus button:hover {
+        color: var(--blue);
+      }
+      .search-mini {
+        margin-left: 32px;
+        font-size: 20px;
+      }
+      .mega {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 72px;
+        background: rgba(255, 255, 255, 0.98);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.06);
+        z-index: 25;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-12px);
+        transition:
+          opacity 0.22s ease,
+          transform 0.22s ease,
+          visibility 0.22s;
+      }
+      .top:hover + .mega,
+      .mega:hover,
+      .mega.open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      .mega-inner {
+        max-width: 980px;
+        margin: auto;
+        padding: 24px 0 28px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 48px;
+      }
+      .mega-col b {
+        display: block;
+        font-size: 13px;
+        color: #8b95a1;
+        margin-bottom: 12px;
+      }
+      .mega-col button {
+        display: block;
+        border: 0;
+        background: none;
+        padding: 6px 0;
+        font: inherit;
+        font-size: 14px;
+        color: #4e5968;
+        cursor: pointer;
+      }
+      .mega-col button:hover {
+        color: var(--blue);
+      }
+      .hero {
+        max-width: 1180px;
+        margin: auto;
+        padding: 74px 0 28px;
+      }
+      .hero-copy {
+        text-align: center;
+      }
+      .eyebrow {
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .hero h1 {
+        font-size: 46px;
+        letter-spacing: -2.4px;
+        margin: 14px 0;
+        line-height: 1.18;
+      }
+      .sub {
+        color: #6b7684;
+        font-size: 17px;
+      }
+      .big-search {
+        width: 580px;
+        max-width: 90%;
+        margin: 28px auto 40px;
+        background: var(--bg);
+        border-radius: 16px;
+        padding: 0 18px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .big-search input {
+        height: 52px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        width: 100%;
+        font: inherit;
+      }
+      .visual {
+        height: 325px;
+        border-radius: 28px;
+        overflow: hidden;
+        position: relative;
+        background: linear-gradient(120deg, #e8f3ff, #f3f8ff 55%, #d9ebff);
+        display: flex;
+        align-items: center;
+        padding: 54px;
+      }
+      .visual:after {
+        content: "";
+        position: absolute;
+        width: 390px;
+        height: 390px;
+        border-radius: 50%;
+        right: -60px;
+        top: -110px;
+        background: rgba(49, 130, 246, 0.15);
+      }
+      .visual:before {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        border-radius: 42px;
+        right: 180px;
+        bottom: -140px;
+        transform: rotate(20deg);
+        background: #3182f6;
+      }
+      .visual-copy {
+        position: relative;
+        z-index: 2;
+      }
+      .visual-copy b {
+        font-size: 14px;
+        color: var(--blue);
+      }
+      .visual-copy h2 {
+        font-size: 34px;
+        line-height: 1.25;
+        margin: 12px 0;
+      }
+      .visual-copy p {
+        color: #6b7684;
+        line-height: 1.7;
+      }
+      .section {
+        max-width: 1180px;
+        margin: auto;
+        padding: 62px 0;
+      }
+      .sec-head {
+        display: flex;
+        align-items: end;
+        margin-bottom: 24px;
+      }
+      .sec-head h2 {
+        font-size: 26px;
+        margin: 0;
+      }
+      .sec-head p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .view {
+        margin-left: auto;
+        border: 0;
+        background: none;
+        color: var(--blue);
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        overflow: hidden;
+        background: #fff;
+        cursor: pointer;
+        transition: 0.18s;
+      }
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      }
+      .thumb {
+        height: 170px;
+        background: #f2f4f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background: #fff;
+      }
+      .placeholder {
+        width: 78%;
+        height: 72%;
+        background: #fff;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.09);
+        padding: 15px;
+      }
+      .placeholder i {
+        display: block;
+        height: 6px;
+        background: var(--blue);
+        width: 36%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      .placeholder span {
+        display: block;
+        height: 5px;
+        background: #e5e8eb;
+        border-radius: 4px;
+        margin: 7px 0;
+      }
+      .card-body {
+        padding: 17px;
+      }
+      .type {
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--blue);
+      }
+      .title {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 7px 0 6px;
+      }
+      .desc {
+        font-size: 13px;
+        color: var(--muted);
+        height: 20px;
+        overflow: hidden;
+      }
+      .meta {
+        display: flex;
+        margin-top: 15px;
+        color: #8b95a1;
+        font-size: 12px;
+      }
+      .heart {
+        margin-left: auto;
+        font-size: 18px;
+        color: #b0b8c1;
+      }
+      .empty {
+        grid-column: 1/-1;
+        padding: 45px;
+        text-align: center;
+        color: var(--muted);
+        background: var(--bg);
+        border-radius: 18px;
+      }
+      .category {
+        background: var(--bg);
+        padding: 65px 0;
+      }
+      .cat-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      .cat {
+        background: #fff;
+        border-radius: 18px;
+        padding: 24px;
+      }
+      .cat-icon {
+        width: 42px;
+        height: 42px;
+        background: #e8f3ff;
+        color: var(--blue);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+      .cat p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .footer {
+        max-width: 1180px;
+        margin: auto;
+        padding: 40px 0 70px;
+        color: #8b95a1;
+        font-size: 13px;
+        border-top: 1px solid var(--line);
+      }
+      @media (max-width: 900px) {
+        .nav,
+        .hero,
+        .section {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .menus {
+          gap: 14px;
+        }
+        .cards,
+        .cat-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .hero h1 {
+          font-size: 36px;
+        }
+        .visual {
+          padding: 35px;
+        }
+        .mega-inner {
+          padding: 20px;
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="nav">
+        <div class="brand">WorkFlow</div>
+        <div class="menus">
+          <button data-filter="PPT">PPT</button
+          ><button data-filter="WORD">WORD</button
+          ><button data-filter="EXCEL">EXCEL</button
+          ><button data-filter="OTHER">기타양식</button
+          ><button data-filter="FAV">★ 즐겨찾기</button>
+        </div>
+        <button class="search-mini" id="searchMini">⌕</button>
+      </div>
+    </header>
+    <div class="mega" id="mega">
+      <div class="mega-inner">
+        <div class="mega-col">
+          <b>PPT</b
+          ><button data-filter="PPT" data-cat="회사소개서">회사소개서</button
+          ><button data-filter="PPT" data-cat="IR">IR · 제안서</button
+          ><button data-filter="PPT" data-cat="보고자료">보고자료</button
+          ><button data-filter="PPT" data-cat="사업계획서">사업계획서</button
+          ><button data-filter="PPT" data-cat="교육자료">교육자료</button>
+        </div>
+        <div class="mega-col">
+          <b>WORD</b><button data-filter="WORD" data-cat="보고서">보고서</button
+          ><button data-filter="WORD" data-cat="회의록">회의록</button
+          ><button data-filter="WORD" data-cat="기획서">기획서</button
+          ><button data-filter="WORD" data-cat="공문">공문 · 안내문</button
+          ><button data-filter="WORD" data-cat="체크리스트">체크리스트</button>
+        </div>
+        <div class="mega-col">
+          <b>EXCEL</b
+          ><button data-filter="EXCEL" data-cat="DB관리">DB 관리</button
+          ><button data-filter="EXCEL" data-cat="일정관리">일정 관리</button
+          ><button data-filter="EXCEL" data-cat="계산양식">계산 양식</button
+          ><button data-filter="EXCEL" data-cat="교육관리">교육 관리</button
+          ><button data-filter="EXCEL" data-cat="예산관리">예산 관리</button>
+        </div>
+        <div class="mega-col">
+          <b>기타양식</b><button data-filter="OTHER" data-cat="PDF">PDF</button
+          ><button data-filter="OTHER" data-cat="이미지">이미지</button
+          ><button data-filter="OTHER" data-cat="아이콘">아이콘</button
+          ><button data-filter="OTHER" data-cat="참고자료">참고자료</button
+          ><button data-filter="OTHER" data-cat="기타">기타</button>
+        </div>
+      </div>
+    </div>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">MY WORK LIBRARY</div>
+          <h1>필요한 양식을<br />가장 빠르게 찾는 방법</h1>
+          <div class="sub">
+            PPT, Word, Excel과 자주 쓰는 업무 양식을 한 곳에서 관리하세요.
+          </div>
+          <div class="big-search">
+            <span>⌕</span
+            ><input
+              id="search"
+              autocomplete="off"
+              placeholder="문서명, 양식 또는 키워드를 검색하세요"
+            />
+          </div>
+        </div>
+        <div class="visual">
+          <div class="visual-copy">
+            <b>FEATURED COLLECTION</b>
+            <h2>좋은 문서는<br />좋은 시작에서 만들어집니다.</h2>
+            <p>
+              직접 만든 템플릿과 업무 양식을 모아두고<br />필요할 때 바로 꺼내
+              사용할 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="recent">
+        <div class="sec-head">
+          <div>
+            <h2>최근 업데이트</h2>
+            <p id="resultText">최근 추가하거나 수정한 양식입니다.</p>
+          </div>
+          <button class="view" id="reset">전체보기 →</button>
+        </div>
+        <div class="cards" id="cards">
+          <div class="empty">등록된 템플릿을 불러오는 중입니다.</div>
+        </div>
+      </section>
+      <div class="category">
+        <section class="section">
+          <div class="sec-head">
+            <div>
+              <h2>양식 둘러보기</h2>
+              <p>파일 형식별로 필요한 자료를 빠르게 찾을 수 있습니다.</p>
+            </div>
+          </div>
+          <div class="cat-grid">
+            <div class="cat">
+              <div class="cat-icon">P</div>
+              <b>PPT Templates</b>
+              <p>보고서, 제안서, 회사소개서 등 프레젠테이션 템플릿</p>
+            </div>
+            <div class="cat">
+              <div class="cat-icon">W</div>
+              <b>Word Forms</b>
+              <p>회의록, 기획서, 공문 등 기본 문서 양식</p>
+            </div>
+            <div class="cat">
+              <div class="cat-icon">X</div>
+              <b>Excel Sheets</b>
+              <p>DB, 일정, 계산 및 관리용 스프레드시트</p>
+            </div>
+            <div class="cat">
+              <div class="cat-icon">+</div>
+              <b>Other Resources</b>
+              <p>PDF, 이미지, 아이콘과 각종 참고자료</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">
+      <b style="color: #333d4b">WorkFlow</b><br /><br />Personal template
+      library · Designed for simple work.
+    </footer>
+    <script src="/assets/js/thumb-data.js"></script>
+    <script>
+      const URL = "https://vvduewatugzqlktxbeli.supabase.co",
+        BUCKET = "templates",
+        MANIFEST = "manifest.json";
+      const THUMBS = window.WORKFLOW_THUMBS || {};
+      const cards = document.getElementById("cards"),
+        search = document.getElementById("search"),
+        resultText = document.getElementById("resultText");
+      let all = [];
+      let filter = "",
+        catFilter = "";
+      let searchTimer;
+      function esc(v) {
+        return String(v ?? "").replace(
+          /[&<>"']/g,
+          (m) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              '"': "&quot;",
+              "'": "&#39;",
+            })[m],
+        );
+      }
+      function fileUrl(path) {
+        return (
+          URL +
+          "/storage/v1/object/public/" +
+          BUCKET +
+          "/" +
+          String(path).split("/").map(encodeURIComponent).join("/")
+        );
+      }
+      function fallback() {
+        return '<div class="placeholder"><i></i><span></span><span></span><span></span></div>';
+      }
+      function isFav(id) {
+        return localStorage.getItem("wf_fav_" + id) === "1";
+      }
+      function matches(x) {
+        const q = search.value.trim().toLowerCase();
+        const hay = [
+          x.title,
+          x.description,
+          x.category,
+          x.file_type,
+          x.file_name,
+        ]
+          .join(" ")
+          .toLowerCase();
+        if (q && !hay.includes(q)) return false;
+        if (filter === "FAV" && !isFav(x.id)) return false;
+        if (filter && filter !== "FAV" && x.file_type !== filter) return false;
+        if (
+          catFilter &&
+          !String(x.category || "")
+            .toLowerCase()
+            .includes(catFilter.toLowerCase()) &&
+          !String(x.title || "")
+            .toLowerCase()
+            .includes(catFilter.toLowerCase())
+        )
+          return false;
+        return true;
+      }
+      function render() {
+        const list = all.filter(matches);
+        if (!list.length) {
+          cards.innerHTML = '<div class="empty">검색 결과가 없습니다.</div>';
+          resultText.textContent = "조건에 맞는 양식을 찾지 못했습니다.";
+          return;
+        }
+        resultText.textContent =
+          search.value || filter || catFilter
+            ? list.length + "개의 양식을 찾았습니다."
+            : "최근 추가하거나 수정한 양식입니다.";
+        cards.innerHTML = list
+          .slice(0, 12)
+          .map((x) => {
+            const thumb =
+              THUMBS[x.title] ||
+              (x.thumbnail_path ? fileUrl(x.thumbnail_path) : "");
+            const ext = (x.file_name || "").split(".").pop().toUpperCase();
+            return `<div class="card" data-url="${esc(fileUrl(x.file_path))}"><div class="thumb">${thumb ? `<img src="${esc(thumb)}" alt="${esc(x.title)}">` : fallback()}</div><div class="card-body"><span class="type">${esc(x.file_type || "OTHER")}</span><div class="title">${esc(x.title || x.file_name)}</div><div class="desc">${esc(x.description || "")}</div><div class="meta">${esc(ext || x.file_type)} · v${esc(x.version || "1.0")}<span class="heart" data-id="${esc(x.id)}">${isFav(x.id) ? "♥" : "♡"}</span></div></div></div>`;
+          })
+          .join("");
+        document.querySelectorAll(".thumb img").forEach((img) =>
+          img.addEventListener("error", () => {
+            img.parentElement.innerHTML = fallback();
+          }),
+        );
+        document
+          .querySelectorAll(".card")
+          .forEach((c) =>
+            c.addEventListener("click", () => (location.href = c.dataset.url)),
+          );
+        document.querySelectorAll(".heart").forEach((h) =>
+          h.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const k = "wf_fav_" + h.dataset.id;
+            localStorage.setItem(k, isFav(h.dataset.id) ? "0" : "1");
+            render();
+          }),
+        );
+      }
+      async function load() {
+        try {
+          const r = await fetch(fileUrl(MANIFEST) + "?t=" + Date.now(), {
+            cache: "no-store",
+          });
+          if (!r.ok) throw 0;
+          const j = await r.json();
+          all = Array.isArray(j) ? j : [];
+          render();
+        } catch {
+          cards.innerHTML =
+            '<div class="empty">템플릿 목록을 불러오지 못했습니다.</div>';
+        }
+      }
+      search.addEventListener("input", () => {
+        filter = "";
+        catFilter = "";
+        render();
+        clearTimeout(searchTimer);
+        if (search.value.trim())
+          searchTimer = setTimeout(
+            () =>
+              document
+                .getElementById("recent")
+                .scrollIntoView({ behavior: "smooth", block: "start" }),
+            250,
+          );
+      });
+      search.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          filter = "";
+          catFilter = "";
+          render();
+          document
+            .getElementById("recent")
+            .scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+      document.getElementById("searchMini").onclick = () => {
+        search.focus();
+        search.select();
+      };
+      document.getElementById("reset").onclick = () => {
+        filter = "";
+        catFilter = "";
+        search.value = "";
+        render();
+      };
+      document.querySelectorAll("[data-filter]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            filter = b.dataset.filter;
+            catFilter = b.dataset.cat || "";
+            search.value = "";
+            render();
+            document
+              .getElementById("recent")
+              .scrollIntoView({ behavior: "smooth", block: "start" });
+          }),
+      );
+      load();
+    </script>
+  </body>
+</html>
